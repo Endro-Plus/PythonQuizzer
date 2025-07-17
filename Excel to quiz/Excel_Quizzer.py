@@ -1,21 +1,19 @@
 import pandas as pd#reading the spreadsheet
 import random#random selection of questions and answers
-
-
-sheetnum = 0
-questions = []#questions go here
-answers = []#answers to questions go here
-answer = []#the true answer goes here
-currentanswer = ""#answer to the current question
-explanation = []#explaining the answer
-questionnum = 0#what we show the viewers
-totalquestions = 0#total questions... self explanatory
-realqnum = 0#the index
-infinite = False#infinite questions mode
-correct = 0#amount of questions correct
-choices = []#choices of current answers given
-user_selection = ''
 while True:
+    sheetnum = 0
+    questions = []#questions go here
+    answers = []#answers to questions go here
+    answer = []#the true answer goes here
+    currentanswer = ""#answer to the current question
+    explanation = []#explaining the answer
+    questionnum = 0#what we show the viewers
+    totalquestions = 0#total questions... self explanatory
+    realqnum = 0#the index
+    infinite = False#infinite questions mode
+    correct = 0#amount of questions correct
+    choices = []#choices of current answers given
+    user_selection = ''
     while True:
         print("downloading excel spreadsheet")
         
@@ -56,11 +54,11 @@ while True:
         #fill up the variables
         questionnum = 1
         for i in range (0, len(quizzes)):
-            questions.append(quizzes.iloc[i, 0])
-            answers.append([quizzes.iloc[i, 1], quizzes.iloc[i, 2], quizzes.iloc[i, 3], quizzes.iloc[i, 4]])
-            answer.append(quizzes.iloc[i, 5])
+            questions.append(str(quizzes.iloc[i, 0]))
+            answers.append([str(quizzes.iloc[i, 1]), str(quizzes.iloc[i, 2]), str(quizzes.iloc[i, 3]), str(quizzes.iloc[i, 4])])
+            answer.append(str(quizzes.iloc[i, 5]))
             if quizzes.iloc[i, 6] != "":
-                explanation.append(quizzes.iloc[i, 6])
+                explanation.append(str(quizzes.iloc[i, 6]))
             else:
                 explanation.append("...")
             pass
@@ -134,11 +132,11 @@ while True:
         #fill up the variables
         questionnum = 1
         for i in range (0, len(quizzes)):
-            questions.append(quizzes.iloc[i, 0])
-            answers.append([quizzes.iloc[i, 1], quizzes.iloc[i, 2], quizzes.iloc[i, 3], quizzes.iloc[i, 4]])
-            answer.append(quizzes.iloc[i, 5])
+            questions.append(str(quizzes.iloc[i, 0]))
+            answers.append([str(quizzes.iloc[i, 1]), str(quizzes.iloc[i, 2]), str(quizzes.iloc[i, 3]), str(quizzes.iloc[i, 4])])
+            answer.append(str(quizzes.iloc[i, 5]))
             if quizzes.iloc[i, 6] != "":
-                explanation.append(quizzes.iloc[i, 6])
+                explanation.append(str(quizzes.iloc[i, 6]))
             else:
                 explanation.append("...")
             pass
